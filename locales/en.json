@@ -1,0 +1,4 @@
+{
+    "command.show_help": "Open the latest server changelog",
+    "error.changelog_unavailable": "The changelog is currently unavailable."
+}

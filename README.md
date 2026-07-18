@@ -1,23 +1,82 @@
-# Changelog Script by Three Amigos
+# Advanced Changelog
 
-![tam_changelog](https://raw.githubusercontent.com/ThreeAmigosModding/ThreeAmigosModding/main/img/tam_changelog.png)
+SCFD Changelog is a modern, framework-agnostic changelog system for FiveM, featuring a clean and secure UI designed to keep players informed about every server update.
 
-[Support Discord](https://discord.gg/threeamigos)
+Display rich release notes with version history, categories, metadata, optional Discord publishing, and automatic update notifications - all from a single `CHANGELOG.md` file.
 
-[Tebex](https://threeamigos.shop)
+## Key Features
+
+* 📖 Modern React + shadcn changelog interface
+* 🗂️ Browse previous releases through built-in version history
+* 🏷️ Filter updates by configurable categories
+* ✨ Rich release metadata including titles, summaries, authors, dates, and importance flags
+* 🔔 Automatically display new changelogs once per resource version
+* 📤 Optional Discord webhook publishing
+* ⚡ Server-side parsing with automatic caching
+* 🔒 Secure, validated rendering with no HTML or JavaScript execution
+* 🎨 Multiple built-in themes including Scuffed Labs and several shadcn color variants
+* 🧩 Client and server exports for complete integration with your own resources
+
+## Integration & Customization
+
+* Works standalone with no framework dependency.
+* Uses **ox_lib** only for shared initialization and localization.
+* Fully configurable through simple configuration files.
+* Release information is generated entirely from `CHANGELOG.md`.
+* Supports custom release metadata, categories, and version history.
+* Built-in exports allow other resources to display or query changelog information.
+* Easily integrate with existing menus, dashboards, or welcome screens.
+
+## Security
+
+Security was a primary goal during development.
+
+* Changelog files are parsed exclusively on the server.
+* Clients never submit changelog content.
+* All data is validated before being sent to the UI.
+* The interface renders plain text only—no HTML rendering or runtime script execution.
+* Includes a restrictive Content Security Policy and additional validation to prevent injection attacks.
+
+## Documentation
+
+The resource supports:
+
+* Rich release metadata
+* Category-based entries
+* Automatic version tracking
+* Client and server exports
+* Discord webhook publishing
+* Configurable themes
+* Full localization
+
+Complete documentation, examples, and API references are available on the Scuffed Labs documentation website.
+
+## Documentation & Support
+
+* **Documentation:** https://docs.scuffedlabs.com
+* **Support Discord:** https://scuffedlabs.com/discord
+* **Website:** https://scuffedlabs.com
+
+## Requirements
+
+* FiveM server artifacts
+* ox_lib **3.30.0** or newer
 
 ## Installation
 
-Download the release of [ox_lib](https://github.com/overextended/ox_lib) from  & add it to your server or resources.cfg **BEFORE** `TAM_changelog`
+```cfg
+ensure ox_lib
+ensure scfd_changelog
+```
 
-Add `ensure TAM_changelog` to your server or resources cfg file
+The resource folder must remain named `scfd_changelog`.
 
-## Configuration
+## Credits
 
-Edit the `changelog.md` file included with this resource. It uses [markdown format](https://www.markdownguide.org/cheat-sheet/)
+* Created and maintained by **Scuffed Labs**.
 
-## Development
+## License
 
-The export `showChangelog` accepts a boolean and defines if the changelog should be shown or not.
+This resource is released under the **Scuffed Labs Community License (SLCL)**.
 
-You can show the changelog via triggering the client event `tam:showChangelog`.
+See `LICENSE.md` for the complete license.
