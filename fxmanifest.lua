@@ -12,7 +12,7 @@ name "scfd_changelog"
 author "Scuffed Labs"
 website "https://scuffedlabs.com"
 description "Secure, framework-agnostic NUI changelog viewer by Scuffed Labs"
-version "v3.0.0"
+version "v1.0.0"
 
 ox_lib {
     'locale'

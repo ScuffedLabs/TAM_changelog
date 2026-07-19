@@ -1,15 +1,24 @@
-import { StrictMode } from "react"
-import { createRoot } from "react-dom/client"
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { isEnvBrowser } from "./lib/misc";
 
-import App from "./App"
-import "./index.css"
+import App from "./App";
+import "./index.css";
 
-const root = document.getElementById("root")
+if (isEnvBrowser()) {
+	const root = document.getElementById("root");
 
-if (!root) throw new Error("Missing NUI root element")
+	// https://i.imgur.com/iPTAdYV.png - Night time img
+	root!.style.backgroundImage = 'url("https://i.imgur.com/e64SL2N.png")';
+	root!.style.backgroundSize = "cover";
+	root!.style.backgroundRepeat = "no-repeat";
+	root!.style.backgroundPosition = "center";
+}
 
-createRoot(root).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+const root = document.getElementById("root");
+
+createRoot(root!).render(
+	<StrictMode>
+		<App />
+	</StrictMode>,
+);
